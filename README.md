@@ -21,5 +21,5 @@
 ثبت المكتبات: pip install streamlit openai
 
 شغل الملف الأساسي: streamlit run app.py
-او من خلال ذا الرابط
+او من خلال هذا الرابط
 https://travel-twin-ai-u79x3pye8l6czeds5vswbh.streamlit.app/
