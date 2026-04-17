@@ -125,59 +125,85 @@ def show_digital_twin_sidebar():
             st.info("قم بتسجيل اسمك لبدء بناء توأمك الرقمي.")
 
 
+# --- 3. تصميم الواجهة (CSS المطور) ---
 st.markdown("""
 <style>
-    @import url('[https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap](https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap)');
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
     
-    html, body, [class*="st-"] {
-        font-family: 'Cairo', sans-serif;
-        direction: rtl; text-align: right;
+    /* 1. إصلاح ألوان النصوص وإجبارها على الظهور بلون غامق */
+    html, body, [class*="st-"], .stMarkdown, p, h1, h2, h3, h4, span, label, div, li {
+        font-family: 'Cairo', sans-serif !important;
+        direction: rtl !important;
+        text-align: right !important;
+        color: #2D3436 !important; /* لون رمادي غامق جداً للوضوح التام */
     }
     
-    .stApp { background-color: #F4F1E1; }
+    /* 2. لون خلفية التطبيق */
+    .stApp { 
+        background-color: #F4F1E1 !important; 
+    }
     
+    /* 3. تنسيق الكروت (Cards) */
     .card {
-        background-color: white;
-        border: 1px solid #D1C7A7;
-        border-radius: 15px;
-        padding: 25px;
-        margin-bottom: 15px;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        background-color: #ffffff !important;
+        border: 1px solid #D1C7A7 !important;
+        border-radius: 15px !important;
+        padding: 25px !important;
+        margin-bottom: 15px !important;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05) !important;
+        color: #2D3436 !important;
     }
 
+    /* 4. تنسيق العناوين الكبيرة */
     .big-title {
         font-size: 2.8rem;
         font-weight: 700;
-        color: #3D6B6B;
-        margin-bottom: 5px;
+        color: #3D6B6B !important;
         line-height: 1.1;
+        margin-bottom: 15px;
     }
 
-    .sub-title {
-        font-size: 1.2rem;
-        color: #555;
-        line-height: 1.6;
-        margin-bottom: 30px;
-    }
-
+    /* 5. تنسيق الأزرار (Buttons) */
     .stButton>button {
         background-color: #3D6B6B !important;
-        color: white !important;
+        color: #ffffff !important;
         border-radius: 12px !important;
         border: none !important;
         padding: 12px 24px !important;
         font-weight: bold !important;
         width: 100%;
         font-size: 1.1rem;
+        transition: 0.3s;
+    }
+    
+    .stButton>button:hover {
+        background-color: #2A4D4D !important;
+        transform: translateY(-2px);
     }
 
-    .booking-btn-style button {
-        background-color: #D4A373 !important;
-        height: 55px;
-        font-size: 1.3rem !important;
+    /* 6. تنسيق القائمة الجانبية (Sidebar) */
+    [data-testid="stSidebar"] {
+        background-color: #ffffff !important;
+        border-left: 1px solid #D1C7A7 !important;
+    }
+    
+    [data-testid="stSidebar"] * {
+        color: #2D3436 !important;
     }
 
+    /* 7. إخفاء العناصر الافتراضية لستريمليت لمظهر احترافي */
     header, footer { visibility: hidden; }
+    
+    /* 8. تنسيق الروابط */
+    a {
+        color: #D4A373 !important;
+        text-decoration: none !important;
+        font-weight: bold;
+    }
+    a:hover {
+        text-decoration: underline !important;
+    }
+
 </style>
 """, unsafe_allow_html=True)
 
